@@ -1,4 +1,4 @@
-FROM python:3.6-alpine
+FROM python:3.11-alpine
 
 MAINTAINER jhao104 <j_hao104@163.com>
 
@@ -14,7 +14,7 @@ RUN apk add -U tzdata && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && 
 
 # runtime environment
 RUN apk add musl-dev gcc libxml2-dev libxslt-dev && \
-    pip install --no-cache-dir -r requirements.txt && \
+    pip install --no-cache-dir -r requirements.txt -i https://mirrors.ustc.edu.cn/pypi/web/simple && \
     apk del gcc musl-dev
 
 COPY . .

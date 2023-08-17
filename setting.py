@@ -11,6 +11,8 @@
 -------------------------------------------------
 """
 
+import os
+
 BANNER = r"""
 ****************************************************************
 *** ______  ********************* ______ *********** _  ********
@@ -37,7 +39,7 @@ PORT = 5010
 # example:
 #      Redis: redis://:password@ip:port/db
 #      Ssdb:  ssdb://:password@ip:port
-DB_CONN = 'redis://:pwd@127.0.0.1:6379/0'
+DB_CONN = os.getenv('DB_CONN', 'redis://localhost:6379/0')
 
 # proxy table name
 TABLE_NAME = 'use_proxy'
@@ -60,9 +62,9 @@ PROXY_FETCHER = [
 
 # ############# proxy validator #################
 # 代理验证目标网站
-HTTP_URL = "http://httpbin.org"
+HTTP_URL = "http://qcsh.h5yunban.com/youth-learning/cgi-bin/common-api/organization/children"
 
-HTTPS_URL = "https://www.qq.com"
+HTTPS_URL = "https://qcsh.h5yunban.com/youth-learning/cgi-bin/common-api/organization/children"
 
 # 代理验证时超时时间
 VERIFY_TIMEOUT = 10

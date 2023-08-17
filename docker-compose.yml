@@ -4,7 +4,7 @@ services:
     build: .
     container_name: proxy_pool
     ports:
-      - "5010:5010"
+      - "25010:5010"
     links:
       - proxy_redis
     environment:
