@@ -27,7 +27,7 @@ class ResponseCustom(object):
 
 
 class ProxyBypassRequest(object):
-    FlareSolverrUrl = "http://flaresolverr:8191/v1"
+    FlareSolverrUrl = "http://proxy_flaresolverr:8191/v1"
     name = "proxy_bypass_request"
 
     def __init__(self, *args, **kwargs):
