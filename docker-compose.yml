@@ -14,6 +14,8 @@ services:
   proxy_redis:
     image: "redis"
     container_name: proxy_redis
+    volumes:
+      - ./redis_data:/data
   proxy_flaresolverr:
     image: "ghcr.io/flaresolverr/flaresolverr:latest"
     container_name: proxy_flaresolverr
