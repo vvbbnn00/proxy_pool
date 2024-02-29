@@ -4,7 +4,7 @@ services:
     build: .
     container_name: proxy_pool
     ports:
-      - "25011:5010"
+      - "127.0.0.1:25011:5010"
     links:
       - proxy_redis
     environment:
@@ -14,8 +14,19 @@ services:
   proxy_redis:
     image: "redis"
     container_name: proxy_redis
+    ports:
+      - "127.0.0.1:26379:6379"
     volumes:
       - ./redis_data:/data
   proxy_flaresolverr:
     image: "ghcr.io/flaresolverr/flaresolverr:latest"
     container_name: proxy_flaresolverr
+  proxy_pool_go_api:
+    build:
+      context: ./go_api
+      dockerfile: Dockerfile
+    container_name: proxy_pool_go_api
+    ports:
+      - "25010:8080"
+    environment:
+      REDIS_HOST: "proxy_redis"
