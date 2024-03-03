@@ -44,7 +44,6 @@ DB_CONN = os.getenv('DB_CONN', 'redis://localhost:6379/0')
 # proxy table name
 TABLE_NAME = 'use_proxy'
 
-
 # ###### config the proxy fetch function ######
 PROXY_FETCHER = [
     "freeProxy01",
@@ -77,6 +76,9 @@ MAX_FAIL_COUNT = 0
 
 # proxyCheck时代理数量少于POOL_SIZE_MIN触发抓取
 POOL_SIZE_MIN = 20
+
+# flaresolverr服务地址
+FLARE_SOLVERR_URL = os.getenv('FLARE_SOLVERR_URL', "http://proxy_flaresolverr:8191/v1")
 
 # ############# proxy attributes #################
 # 是否启用代理地域属性

@@ -9,6 +9,7 @@ services:
       - proxy_redis
     environment:
       DB_CONN: "redis://@proxy_redis:6379/0"
+      FLARE_SOLVERR_URL: "http://proxy_flaresolverr:8191/v1"
     depends_on:
       - proxy_redis
   proxy_redis:

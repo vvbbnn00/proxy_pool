@@ -16,6 +16,7 @@ import requests
 import time
 
 from handler.logHandler import LogHandler
+import setting
 
 requests.packages.urllib3.disable_warnings()
 
@@ -27,7 +28,7 @@ class ResponseCustom(object):
 
 
 class ProxyBypassRequest(object):
-    FlareSolverrUrl = "http://proxy_flaresolverr:8191/v1"
+    FlareSolverrUrl = setting.FLARE_SOLVERR_URL
     name = "proxy_bypass_request"
 
     def __init__(self, *args, **kwargs):
